@@ -3,11 +3,52 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+#   Ky Lee <kyhyeunlee@gmail.com>
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Path
+export NVM_DIR="$HOME/.nvm"
+export PATH="$PATH:$HOME/code/bin/arcanist/bin/"
+
+#export GOPATH="$HOME/code/go"
+#export PATH="$PATH:/usr/local/go/bin"
+
+# Alias
+# tmux
+alias tma='tmux attach -d -t'
+#alias tmn='tmux new -s $(basename $(pwd))'
+alias tmn='tmux new -s'
+alias tml='tmux list-sessions'
+
+#git
+alias gs='git status'
+alias gss='git status -s'
+alias ga='git add'
+alias gu='git unadd'
+alias gd='git diff'
+alias gco='git checkout'
+alias gcmsg='git commit -m'
+alias gr='git rm $(git ls-files --deleted)'
+
+#leader commands
+alias ,ev='vim ~/.vimrc'
+alias ,ez='vim ~/.zshrc'
+alias ,et='vim ~/.tmux.conf'
+alias ,sz='source ~/.zshrc'
+
+#node stuff
+alias nvm='unalias nvm ; . ~/.nvm/nvm.sh && . ~/.nvm/bash_completion &&  nvm'
+alias npm-exec="PATH=$(npm bin):$PATH"
+alias n='npm'
+
+export CLICOLOR=1
+export TERM=xterm-256color
+
+alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
